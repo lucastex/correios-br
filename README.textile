@@ -3,7 +3,7 @@ h1. Plugin Grails - Correios-BR
 h2. Proposito
 
 Este plugin oferece por enquanto a funcionalidade de se conectar no servico de calculo de frete dos correios.
-O servico de calculo de frete é gratuito no site dos correios, porem nao existe garantia de disponibilidade do mesmo.
+O servico de calculo de frete e gratuito no site dos correios, porem nao existe garantia de disponibilidade do mesmo.
 
 h2. Tipos de envio suportados
 
@@ -19,16 +19,16 @@ h2. Como usar
 
 O plugin possui um _Controller_ TesteController para que voce possa testar o calculo, neste controller e respectivas _views_ um codigo totalmente funcional esta a disposicao para consulta.
 
-É necessario importar as seguintes classes
+E necessario importar as seguintes classes
 
-<code>
+<pre><code>
 import br.com.lucastex.grails.plugins.correios.CalculoFrete
 import static br.com.lucastex.grails.plugins.correios.CalculoFrete.*
-</code>
+</code></pre>
 
 h2. Como contribuir
 
-Tire a bunda desta cadeira, faça um fork do projeto, altere o que achar necessario e envio um pull request. Este plugin e da comunidade e e responsabilidade de todos fazer ele crescer.
+Tire a bunda desta cadeira, faca um fork do projeto, altere o que achar necessario e envio um pull request. Este plugin e da comunidade e e responsabilidade de todos fazer ele crescer.
 
 h2. Implementacoes futuras
 
@@ -37,4 +37,4 @@ h2. Implementacoes futuras
 h2. Sobre
 
 Plugin desenvolvido por _Lucas Teixeira_.
-Caso precise, entre em contato através do e-mail _lucastex@gmail.com_ ou do twitter *@lucastex*
+Caso precise, entre em contato atraves do e-mail _lucastex@gmail.com_ ou do twitter *@lucastex*
