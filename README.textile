@@ -39,6 +39,40 @@ E chame o metodo *calculoFrete* passando os argumentos necessarios para o calcul
 | avisoRecebimento | Para calcular encomendas com AR (Aviso de recebimento) | Nao | true / false |
 | maoPropria | Para calcular encomendas entregues em mao (requer assinatura) | Nao | true / false |
 
+Toda chamada ira retornar um objeto do tipo CalculoFrete (pacote br.com.lucastex.grails.plugins.correio). Esta classe possui os seguintes atributos:
+
+| Atributo | Tipo | Descricao |
+| versao | String | Versao da resposta retornada pelos correios | 
+| tipoPostagem | String | Tipo da postagem (SEDEX, SEDEX A COBRAR, etc) | 
+| codigoTipoPostagem | String | Codigo do tipo da postagem | 
+| peso | Double | Peso da encomenda | 
+| maoPropria | boolean | Se a encomenda sera entregue em maos | 
+| tarifaMaoPropria | Double | Custo adicional para ser entregue em maos | 
+| avisoRecebimento | boolean | Se a encomenda ira gerar o aviso de recebimento | 
+| tarifaAvisoRecebimento | Double | Custo adicional do aviso de recebimento | 
+| valorDeclarado | Double | Valor declarado pela encomenda | 
+| tarifaValorDeclarado | Double | Tarifa de seguro para o valor declarado | 
+| *valorFrete* | *Double* | *Valor total para envio da encomenda* | 
+| origem | Map | Map com as seguintes chaves ('uf' => UF de origem, 'cep' => CEP de origem, 'local' => Se e interior do estado ou capital) | 
+| destino | Map | Map com as seguintes chaves ('uf' => UF de destino, 'cep' => CEP de destino, 'local' => Se e interior do estado ou capital) | 
+
+h2. Exemplos
+
+h3. Encomenda de 850 gramas, do cep 85851-150 para o cep 01331-001 com AR por SEDEX:
+
+<pre><code>def calculo = correiosService.calculoFrete(servico: postagem.SEDEX, cepOrigem: "85851-150", cepDestino: "01331-001", peso: 0.850, avisoRecebimento: true)</code></pre>
+
+h3. Encomenda de 1.2 kg, do cep 86051-060 para o cep 01337-000 entregue em mãos por SEDEX a cobrar:
+
+<pre><code>def calculo = correiosService.calculoFrete(servico: postagem.SEDEX_A_COBRAR, cepOrigem: "86051-060", cepDestino: "01337-000", peso: 1.2, mapPropria: true)</code></pre>
+
+h3. Encomenda de 500 gramas, do cep 60245-965 para o cep 29018-973 com seguro para o valor de R$ 1500,00 por SEDEX_10:
+
+<pre><code>def calculo = correiosService.calculoFrete(servico: postagem.SEDEX_10, cepOrigem: "60245-965", cepDestino: "29018-973", peso: 0.5, valorDeclarado: 1500)</code></pre>
+
+h2. Tratamento de erros
+
+Em caso de um erro retornado pelo Correios, uma exception irá ser lancada com a mensagem de erro que o Correios retornar, por exemplo: "CEP de origem invalido", ou "Tipo de encomenda nao disponivel para este destino", etc.
 
 h2. Como contribuir
 

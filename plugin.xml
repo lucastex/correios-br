@@ -1,9 +1,9 @@
-<plugin name='correios-br' version='0.1' grailsVersion='1.1.2 &gt; *'>
+<plugin name='correios-br' version='1.0' grailsVersion='1.1.2 &gt; *'>
   <author>Lucas Frare Teixeira</author>
   <authorEmail>lucastex@gmail.com</authorEmail>
   <title>Correios BR Grails Plugin</title>
   <description>Plugin para cálculo de frete usando servico dos Correios - Brasil</description>
-  <documentation>http://grails.org/plugin/grails-br</documentation>
+  <documentation>http://grails.org/plugin/correios-br</documentation>
   <resources>
     <resource>DataSource</resource>
     <resource>UrlMappings</resource>
