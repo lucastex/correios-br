@@ -72,7 +72,7 @@ h3. Encomenda de 500 gramas, do cep 60245-965 para o cep 29018-973 com seguro pa
 
 h2. Tratamento de erros
 
-Em caso de um erro retornado pelo Correios, uma exception irá ser lancada com a mensagem de erro que o Correios retornar, por exemplo: "CEP de origem invalido", ou "Tipo de encomenda nao disponivel para este destino", etc.
+Em caso de um erro retornado pelo Correios, uma exception ira ser lancada com a mensagem de erro que o Correios retornar, por exemplo: "CEP de origem invalido", ou "Tipo de encomenda nao disponivel para este destino", etc.
 
 h2. Como contribuir
 
