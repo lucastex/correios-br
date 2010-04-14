@@ -42,19 +42,19 @@ E chame o metodo *calculoFrete* passando os argumentos necessarios para o calcul
 Toda chamada ira retornar um objeto do tipo CalculoFrete (pacote br.com.lucastex.grails.plugins.correio). Esta classe possui os seguintes atributos:
 
 | Atributo | Tipo | Descricao |
-| versao | String | Versao da resposta retornada pelos correios | 
-| tipoPostagem | String | Tipo da postagem (SEDEX, SEDEX A COBRAR, etc) | 
-| codigoTipoPostagem | String | Codigo do tipo da postagem | 
-| peso | Double | Peso da encomenda | 
-| maoPropria | boolean | Se a encomenda sera entregue em maos | 
-| tarifaMaoPropria | Double | Custo adicional para ser entregue em maos | 
-| avisoRecebimento | boolean | Se a encomenda ira gerar o aviso de recebimento | 
-| tarifaAvisoRecebimento | Double | Custo adicional do aviso de recebimento | 
-| valorDeclarado | Double | Valor declarado pela encomenda | 
-| tarifaValorDeclarado | Double | Tarifa de seguro para o valor declarado | 
-| *valorFrete* | *Double* | *Valor total para envio da encomenda* | 
-| origem | Map | Map com as seguintes chaves ('uf' => UF de origem, 'cep' => CEP de origem, 'local' => Se e interior do estado ou capital) | 
-| destino | Map | Map com as seguintes chaves ('uf' => UF de destino, 'cep' => CEP de destino, 'local' => Se e interior do estado ou capital) | 
+| versao | String | Versao da resposta retornada pelos correios |
+| tipoPostagem | String | Tipo da postagem (SEDEX, SEDEX A COBRAR, etc) |
+| codigoTipoPostagem | String | Codigo do tipo da postagem |
+| peso | Double | Peso da encomenda |
+| maoPropria | boolean | Se a encomenda sera entregue em maos |
+| tarifaMaoPropria | Double | Custo adicional para ser entregue em maos |
+| avisoRecebimento | boolean | Se a encomenda ira gerar o aviso de recebimento |
+| tarifaAvisoRecebimento | Double | Custo adicional do aviso de recebimento |
+| valorDeclarado | Double | Valor declarado pela encomenda |
+| tarifaValorDeclarado | Double | Tarifa de seguro para o valor declarado |
+| *valorFrete* | *Double* | *Valor total para envio da encomenda* |
+| origem | Map | Map com as seguintes chaves ('uf' => UF de origem, 'cep' => CEP de origem, 'local' => Se e interior do estado ou capital) |
+| destino | Map | Map com as seguintes chaves ('uf' => UF de destino, 'cep' => CEP de destino, 'local' => Se e interior do estado ou capital) |
 
 h2. Exemplos
 
