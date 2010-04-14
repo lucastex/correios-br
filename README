@@ -1,10 +1,42 @@
-********************************************
-* Plugin Grails para os Correios do Brasil *
-********************************************
+h1. Plugin Grails - Correios-BR
+
+h2. Proposito
 
 Este plugin oferece por enquanto a funcionalidade de se conectar no servico de calculo de frete dos correios.
+O serviço de calculo de frete é gratuito no site dos correios, porém não existe garantia de disponibilidade do mesmo.
 
+h2. Tipos de envio suportados
 
+O plugin oferece suporte aos seguintes tipos de envio:
 
-Lucas Teixeira
-lucastex@gmail.com
+* PAC
+* SEDEX
+* SEDEX 10
+* SEDEX Hoje
+* SEDEX a cobrar
+
+h2. Como usar
+
+O plugin possui um _Controller_ TesteController para que você possa testar o cálculo, neste controller e respectivas _views_ um código totalmente funcional está a disposição para consulta.
+
+É necessário importar as seguintes classes
+
+<pre>
+	<code>
+		import br.com.lucastex.grails.plugins.correios.CalculoFrete
+		import static br.com.lucastex.grails.plugins.correios.CalculoFrete.*
+	</code>
+</pre>
+
+h2. Como contribuir
+
+Tire a bunda desta cadeira, faça um fork do projeto, altere o que achar necessário e envio um pull request. Este plugin é da comunidade e é responsabilidade de todos fazer ele crescer.
+
+h2. Implementações futuras
+
+* Serviços relacionados a CEP
+
+h2. Sobre
+
+Plugin desenvolvido por _Lucas Teixeira_.
+Caso precise, entre em contato através do e-mail _lucastex@gmail.com_ ou do twitter *@lucastex*
