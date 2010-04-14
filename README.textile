@@ -9,11 +9,11 @@ h2. Tipos de envio suportados
 
 O plugin oferece suporte aos seguintes tipos de envio:
 
-* PAC
-* SEDEX
-* SEDEX 10
-* SEDEX Hoje
-* SEDEX a cobrar
+* PAC (postagem.PAC)
+* SEDEX (postagem.SEDEX)
+* SEDEX 10 (postagem.SEDEX_10)
+* SEDEX Hoje (postagem.SEDEX_HOJE)
+* SEDEX a cobrar (postagem.SEDEX_A_COBRAR)
 
 h2. Como usar
 
@@ -31,8 +31,13 @@ Apos isso, injete o servico dos correios em seu _Controller_
 E chame o metodo *calculoFrete* passando os argumentos necessarios para o calculo. Abaixo uma lista dos argumentos:
 
 | Nome | Descricao | Obrigatorio | Valores possiveis |
+| servico | Tipo do servico para calcular | Sim | Uma das opções descritas acima (postagem.SEDEX ou postagem.SEDEX_A_COBRAR, etc) |
 | cepOrigem | CEP de origem do envio | Sim | CEP 'xxxxx-xxx' |
 | cepDestino | CEP de destino do envio | Sim | CEP 'xxxxx-xxx' |
+| peso | Peso da encomenda (em kg) | Sim | 0.35 (para 350 gramas) |
+| valorDeclarado | Valor declarado da encomenda (para seguro) | Nao | 230.45 (para R$ 240,45) |
+| avisoRecebimento | Para calcular encomendas com AR (Aviso de recebimento) | Nao | true / false |
+| maoPropria | Para calcular encomendas entregues em mao (requer assinatura) | Nao | true / false |
 
 
 h2. Como contribuir
