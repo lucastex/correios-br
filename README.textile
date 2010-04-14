@@ -15,6 +15,15 @@ O plugin oferece suporte aos seguintes tipos de envio:
 * SEDEX Hoje (*postagem.SEDEX_HOJE*)
 * SEDEX a cobrar (*postagem.SEDEX_A_COBRAR*)
 
+h2. Download e dependencias
+
+O plugin foi construido com a versao 1.2.2 do Grails mas deve rodar com qualquer versao a partir da 1.1, pois nao possui outras maiores dependencias. 
+O unico motivo para usar o 1.2.2 foi para poder usar o release-plugin apenas do ZIP e manter os fontes aqui no github.
+
+Para instalar em sua app, basta baixar o zip daqui do github (area de downloads do projeto) ou com o classico
+
+<pre><code>grails install-plugin correios-br</code></pre> 
+
 h2. Como usar
 
 O plugin possui um _Controller_ TesteController para que voce possa testar o calculo, neste controller e respectivas _views_ um codigo totalmente funcional esta a disposicao para consulta.
