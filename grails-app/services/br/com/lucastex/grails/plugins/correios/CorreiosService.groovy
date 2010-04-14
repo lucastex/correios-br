@@ -1,12 +1,13 @@
 package br.com.lucastex.grails.plugins.correios
 
+import org.apache.commons.lang.StringEscapeUtils
+
 class CorreiosService {
 
     boolean transactional = false
 	final String url = "http://www.correios.com.br/encomendas/precos/calculo.cfm?"
 
-    def freteSedex(params = [:]) {
-		params.servico = '40010'
+    def calculoFrete(params = [:]) {
 		return calculate(params)
     }
 
@@ -17,13 +18,14 @@ class CorreiosService {
 		params.avisoRecebimento = params.avisoRecebimento ? "1" : "0"
 		
 		def queryString = params.collect { "${it.key}=${it.value}" }.join("&")
-		def responseText = "${url}${queryString}".toURL().getText("ISO-8859-1")		
-		def response = new XmlSlurper().parseText(responseText)
+		def requestUrl = "${url}${queryString}"
 		
-		println responseText
-		println "****************************************"
+		def responseText = requestUrl.toURL().getText("ISO-8859-1")		
+		responseText = StringEscapeUtils.unescapeHtml(responseText)
+		
+		def response = new XmlSlurper().parseText(responseText)
 		if (response.erro.codigo.toString() != "0") {
-			throw new Exception("Erro ${response.erro.codigo} - ${response.erro.descricao}")
+			throw new Exception("${response.erro.descricao}")
 		}
 		
 		def calculoFrete = new CalculoFrete()
@@ -53,41 +55,3 @@ class CorreiosService {
 		return calculoFrete
 	}
 }
-
-/*
-	COD. DE SERVICOS:
-	41106 - PAC
-	40010 - SEDEX
-	40215 - SEDEX 10
-	40290 - SEDEX HOJE
-	81019 - e-SEDEX
-	44105 - MALOTE
-*/
-//http://www.correios.com.br/encomendas/precos/calculo.cfm?resposta=xml&servico=40010&cepOrigem=85851150&cepDestino=01331001&peso=0.31&avisoRecebimento=1&maoPropria=1&valorDeclarado=100
-
-/*
-	<?xml version="1.0" encoding="ISO-8859-1" ?>
-	<calculo_precos>										
-		<versao_arquivo>1.0</versao_arquivo>
-		<dados_postais>
-			<servico>40010</servico>
-			<servico_nome>SEDEX</servico_nome>
-			<uf_origem>PR</uf_origem>
-			<local_origem>Interior</local_origem>
-			<cep_origem>85851150</cep_origem>
-			<uf_destino>SP</uf_destino>
-			<local_destino>Capital</local_destino>
-			<cep_destino>01331001</cep_destino>
-			<peso>0.31</peso>
-			<mao_propria>0</mao_propria>
-			<aviso_recebimento>0</aviso_recebimento>
-			<valor_declarado>0</valor_declarado>
-			<tarifa_valor_declarado>0</tarifa_valor_declarado>
-			<preco_postal>26.9</preco_postal>
-		</dados_postais>
-		<erro>
-			<codigo>0</codigo>
-			<descricao></descricao>
-		</erro>
-	</calculo_precos>
-*/

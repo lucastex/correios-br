@@ -2,12 +2,12 @@
   <author>Lucas Frare Teixeira</author>
   <authorEmail>lucastex@gmail.com</authorEmail>
   <title>Correios BR Grails Plugin</title>
-  <description>Plugin para c‡lculo de frete usando servico dos Correios - Brasil</description>
+  <description>Plugin para cálculo de frete usando servico dos Correios - Brasil</description>
   <documentation>http://grails.org/plugin/grails-br</documentation>
   <resources>
     <resource>DataSource</resource>
     <resource>UrlMappings</resource>
-    <resource>TesteController</resource>
+    <resource>FreteController</resource>
     <resource>br.com.lucastex.grails.plugins.correios.CorreiosService</resource>
   </resources>
   <dependencies />
