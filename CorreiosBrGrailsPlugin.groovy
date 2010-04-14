@@ -17,7 +17,7 @@ class CorreiosBrGrailsPlugin {
     def description = "Plugin para cálculo de frete usando servico dos Correios - Brasil"
 
     // URL to the plugin's documentation
-    def documentation = "http://grails.org/plugin/grails-br"
+    def documentation = "http://grails.org/plugin/correios-br"
 
     def doWithSpring = {
     }
