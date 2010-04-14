@@ -21,10 +21,19 @@ O plugin possui um _Controller_ TesteController para que voce possa testar o cal
 
 E necessario importar as seguintes classes
 
-<pre><code>
-import br.com.lucastex.grails.plugins.correios.CalculoFrete
-import static br.com.lucastex.grails.plugins.correios.CalculoFrete.*
-</code></pre>
+<pre><code>import br.com.lucastex.grails.plugins.correios.CalculoFrete
+import static br.com.lucastex.grails.plugins.correios.CalculoFrete.*</code></pre>
+
+Apos isso, injete o servico dos correios em seu _Controller_
+
+<pre><code>def correiosService</code></pre>
+
+E chame o metodo *calculoFrete* passando os argumentos necessarios para o calculo. Abaixo uma lista dos argumentos:
+
+| Nome | Descricao | Obrigatorio | Valores possiveis |
+| cepOrigem | CEP de origem do envio | Sim | CEP 'xxxxx-xxx' |
+| cepDestino | CEP de destino do envio | Sim | CEP 'xxxxx-xxx' |
+
 
 h2. Como contribuir
 
@@ -37,4 +46,4 @@ h2. Implementacoes futuras
 h2. Sobre
 
 Plugin desenvolvido por _Lucas Teixeira_.
-Caso precise, entre em contato atraves do e-mail _lucastex@gmail.com_ ou do twitter *@lucastex*
+Caso precise, entre em contato atraves do e-mail _lucastex arroba gmail ponto com_ ou do twitter *@lucastex*
