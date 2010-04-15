@@ -15,6 +15,8 @@ O plugin oferece suporte aos seguintes tipos de envio:
 * SEDEX Hoje (*postagem.SEDEX_HOJE*)
 * SEDEX a cobrar (*postagem.SEDEX_A_COBRAR*)
 
+A referencia a *postagem* bem do import static acima descrito.
+
 h2. Download e dependencias
 
 O plugin foi construido com a versao 1.2.2 do Grails mas deve rodar com qualquer versao a partir da 1.1, pois nao possui outras maiores dependencias. 
@@ -71,7 +73,7 @@ h3. Encomenda de 850 gramas, do cep 85851-150 para o cep 01331-001 com AR por SE
 
 <pre><code>def calculo = correiosService.calculoFrete(servico: postagem.SEDEX, cepOrigem: "85851-150", cepDestino: "01331-001", peso: 0.850, avisoRecebimento: true)</code></pre>
 
-h3. Encomenda de 1.2 kg, do cep 86051-060 para o cep 01337-000 entregue em mãos por SEDEX a cobrar:
+h3. Encomenda de 1.2 kg, do cep 86051-060 para o cep 01337-000 entregue em maos por SEDEX a cobrar:
 
 <pre><code>def calculo = correiosService.calculoFrete(servico: postagem.SEDEX_A_COBRAR, cepOrigem: "86051-060", cepDestino: "01337-000", peso: 1.2, mapPropria: true)</code></pre>
 
