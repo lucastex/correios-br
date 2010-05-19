@@ -97,3 +97,10 @@ h2. Sobre
 
 Plugin desenvolvido por _Lucas Teixeira_.
 Caso precise, entre em contato atraves do e-mail _lucastex arroba gmail ponto com_ ou do twitter *@lucastex*
+
+---------
+YourKit is kindly supporting open source projects with its full-featured Java Profiler.
+YourKit, LLC is the creator of innovative and intelligent tools for profiling
+Java and .NET applications. Take a look at YourKit's leading software products:
+YourKit Java Profiler (http://www.yourkit.com/java/profiler/index.jsp) and
+YourKit .NET Profiler (http://www.yourkit.com/.net/profiler/index.jsp).
